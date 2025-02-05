@@ -1,9 +1,16 @@
-<p>parent works!</p>
-<div class="card">
-  <div class="card-title container">Child component:</div>
-  <div class="card-body">
-    <div class="container">
-      <app-child></app-child>
+<div class="container capture-container">
+  <div class="card container p-4 m-4" *ngFor="let i of [1, 2, 3]">
+    <p>parent works!</p>
+    <div class="image-container">
+      <img src="https://snipboard.io/mF1dGU.jpg" alt="" />
+    </div>
+    <div class="card">
+      <div class="card-title container">Child component:</div>
+      <div class="card-body">
+        <div class="container">
+          <app-child></app-child>
+        </div>
+      </div>
     </div>
   </div>
 </div>

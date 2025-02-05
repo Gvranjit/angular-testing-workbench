@@ -1,0 +1,15 @@
+.image-container {
+    width : 50%;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.capture-container {
+    card {
+        padding: 2rem;
+        margin: 2rem;
+    }
+}
