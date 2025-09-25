@@ -8,8 +8,16 @@
 }
 
 .capture-container {
-    card {
-        padding: 2rem;
-        margin: 2rem;
-    }
+    width: 1600px !important;
+   
+}
+.card {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.slide {
+    height: 900px;
+    width: 1600px
 }

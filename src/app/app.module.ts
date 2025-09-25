@@ -9,6 +9,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditorComponent } from './editor/editor.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { TestSnapshotAndPdfGenerationComponent } from './test-snapshot-and-pdf-generation/test-snapshot-and-pdf-generation.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     ParentComponent,
     ChildComponent,
     EditorComponent,
+    DragDropComponent,
+    TestSnapshotAndPdfGenerationComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +28,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     NgbModule,
     HttpClientModule,
     CKEditorModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

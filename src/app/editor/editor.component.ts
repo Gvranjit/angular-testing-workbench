@@ -72,7 +72,7 @@ const CLOUD_SERVICES_TOKEN_URL =
   selector: 'editor',
   standalone: false,
   templateUrl: './editor.component.html',
-  styleUrls: ['./editor.component.css'],
+  styleUrls: ['./editor.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class EditorComponent implements AfterViewInit {

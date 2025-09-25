@@ -2,3 +2,5 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+/* CKEditor global styles (moved from component to avoid per-component style size budget) */
+@import 'ckeditor5/ckeditor5.css';

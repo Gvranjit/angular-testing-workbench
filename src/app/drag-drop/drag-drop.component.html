@@ -1,0 +1,30 @@
+<div class="resizable-wrapper" [style.width.px]="containerWidth">
+  <div
+    class="resizable-container"
+    (mousedown)="onResizeStart($event)"
+    (touchstart)="onResizeStart($event)"
+  >
+    <ul
+      class="list-group drag-list"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+    >
+      <li
+        class="list-group-item drag-item"
+        *ngFor="let word of meaningfulWords; let i = index"
+        cdkDrag
+        (click)="onSelect(i)"
+        [class.active]="activeIndex === i"
+      >
+        {{ word }}
+      </li>
+    </ul>
+
+    <div
+      class="resize-handle"
+      (mousedown)="onResizeStart($event)"
+      (touchstart)="onResizeStart($event)"
+      title="Drag to resize"
+    ></div>
+  </div>
+</div>

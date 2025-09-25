@@ -1,7 +1,9 @@
 export function captureView() {
-  const appParentElement = document.querySelector('.capture-container');
+  const appParentElement = document.getElementsByClassName('slide');
   if (appParentElement) {
-    const viewContent = getElementWithInlineStyles(appParentElement).outerHTML;
+    const viewContent = getElementWithInlineStyles(
+      appParentElement[0]
+    ).outerHTML;
     const styles = getAllStyles();
     const fullHtml = `<html><head>${styles}</head><body>${viewContent}</body></html>`;
     console.log('Captured View:', fullHtml);

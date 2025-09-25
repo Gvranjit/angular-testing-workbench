@@ -1,14 +1,39 @@
-<div class="container">
-  <h1>This is a test bench</h1>
-  <button class="btn btn-primary" (click)="createPDF()">
-    Click here to snapshot
-  </button>
-  <div class="card">
-    <div class="card-title">
-      <h2 class="container">This is the parent component</h2>
-    </div>
-    <div class="card-body">
-      <app-parent></app-parent>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Angular tests</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li *ngFor="let route of routes; index as i" class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="#"
+            [routerLink]="route.path"
+            >{{ route.title }}</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
     </div>
   </div>
-</div>
+</nav>
+
+<router-outlet></router-outlet>
