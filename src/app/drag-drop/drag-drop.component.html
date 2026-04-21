@@ -4,21 +4,36 @@
     (mousedown)="onResizeStart($event)"
     (touchstart)="onResizeStart($event)"
   >
-    <ul
-      class="list-group drag-list"
-      cdkDropList
-      (cdkDropListDropped)="drop($event)"
-    >
-      <li
-        class="list-group-item drag-item"
-        *ngFor="let word of meaningfulWords; let i = index"
-        cdkDrag
-        (click)="onSelect(i)"
-        [class.active]="activeIndex === i"
-      >
-        {{ word }}
-      </li>
-    </ul>
+    <div class="groups-scroll" #groupsScroll>
+      <div class="groups">
+        <div class="group" *ngFor="let group of groups">
+          <h4>{{ group.name }}</h4>
+          <ul
+            class="list-group drag-list"
+            cdkDropList
+            [id]="group.id"
+            [cdkDropListConnectedTo]="allGroupIds"
+            [cdkDropListData]="group.items"
+            (cdkDropListDropped)="drop($event)"
+          >
+            <li
+              class="list-group-item drag-item"
+              *ngFor="let word of group.items; let i = index"
+              cdkDrag
+              (cdkDragStarted)="onDragStarted($event)"
+              (cdkDragMoved)="onDragMoved($event)"
+              (cdkDragEnded)="onDragEnded()"
+              (click)="onSelect(word)"
+              [class.active]="activeItem === word"
+            >
+              {{ word }}
+              <!-- custom Angular preview component used by CDK when dragging -->
+              <app-drag-preview *cdkDragPreview [text]="word"></app-drag-preview>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <div
       class="resize-handle"

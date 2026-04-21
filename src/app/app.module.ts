@@ -11,6 +11,7 @@ import { EditorComponent } from './editor/editor.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { DragPreviewComponent } from './drag-drop/drag-preview/drag-preview.component';
 import { TestSnapshotAndPdfGenerationComponent } from './test-snapshot-and-pdf-generation/test-snapshot-and-pdf-generation.component';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TestSnapshotAndPdfGenerationComponent } from './test-snapshot-and-pdf-g
     ChildComponent,
     EditorComponent,
     DragDropComponent,
+    // drag preview helper is a standalone component and is imported below
     TestSnapshotAndPdfGenerationComponent,
   ],
   imports: [
@@ -29,6 +31,7 @@ import { TestSnapshotAndPdfGenerationComponent } from './test-snapshot-and-pdf-g
     HttpClientModule,
     CKEditorModule,
     DragDropModule,
+    DragPreviewComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

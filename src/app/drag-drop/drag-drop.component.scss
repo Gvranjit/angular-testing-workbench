@@ -1,17 +1,38 @@
 /* Basic drag & drop visuals */
+.groups-scroll {
+	max-height: 70vh; /* overall scroll area */
+	overflow: auto;
+	padding-right: 12px; /* space for scrollbar + shadow */
+	scrollbar-gutter: stable;
+	position: relative; /* make it a positioning context for drag preview */
+}
+
 .drag-list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 	width: 100%; /* fill the resizable container */
 	max-width: none;
-	/* increase height so more items are visible before scrolling; use viewport units to stay responsive */
-	max-height: 70vh;
-	overflow: auto;
-		/* reserve smaller space so item shadows don't overlap the scrollbar */
-		padding-right: 12px; /* space for scrollbar + shadow */
-	/* reserve stable space for the scrollbar where supported */
-	scrollbar-gutter: stable;
+	/* remove per-list scroll — parent .groups-scroll provides scrolling */
+}
+
+/* make groups stack vertically and avoid accidental overflow */
+.groups {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 12px;
+	box-sizing: border-box;
+}
+
+.group {
+	width: 100%;
+	min-width: 0; /* prevents flex children from overflowing in some browsers */
+}
+
+.group h4 {
+	margin: 0 0 8px 0;
+	font-size: 1rem;
 }
 
 .drag-item {

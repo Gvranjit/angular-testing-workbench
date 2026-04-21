@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.drag-preview-root {
+  pointer-events: none;
+  background: var(--bg-color-0, #ffffff);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  padding: 8px 12px;
+  color: var(--text-color, #222);
+  font-weight: 600;
+}
+
+.drag-preview-inner {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 320px;
+}
